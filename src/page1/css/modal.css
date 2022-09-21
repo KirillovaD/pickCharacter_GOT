@@ -1,0 +1,86 @@
+.modal__btn{
+  padding: 10px 30px;
+  background-color: rgb(0, 54, 124);
+  color: white;
+  border: none;
+  border-radius: 2em;
+
+  margin: 0;
+  position: absolute;
+  left: 50%;
+
+  cursor: pointer;
+
+
+}
+
+
+.modal__bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s opacity 0.5s;
+
+
+}
+.modal__bg_active{
+  visibility: visible;
+  opacity: 1;
+
+
+}
+.modal{
+  position: relative;
+  background-color: rgb(0, 119, 174);
+  width: 60%;
+  height: 40%;
+  color: white;
+
+}
+.modal h2{
+  text-align: center;
+  padding: 1em;
+}
+
+.inputs {
+  width: 600px;
+  display:flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0 auto;
+  padding: 1em;
+
+}
+
+.modal__close{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  /* font-weight: bold; */
+}
+
+.modal__prev{
+  position: absolute;
+  bottom: center;
+  left: 40px;
+  cursor: pointer;
+  font-size: 1.5em;
+
+}
+.modal__next{
+  position: absolute;
+  bottom: center;
+  right: 40px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
