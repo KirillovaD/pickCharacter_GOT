@@ -1,12 +1,21 @@
+@font-face {
+  font-family: 'GameofThronesKG';
+  src: url('assets/GameofThronesKG/GameofThronesKG.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body{
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(assets/background4.jpg);
+  background-image: url(assets/background5.png);
   background: opacity 30%;
 }
 
 .title {
+  font-family: 'GameofThronesKG';
+
+  text-shadow: 1px 1px 2px white;
   text-align: center;
-  color: white;
   font-size: 2em;
   font-weight: bold;
 }
@@ -15,13 +24,40 @@ body{
   width: 70vw;
 }
 
-.questions {
-  background-color: white;
-  padding: 15px 30px 30px 70px;
-  margin-top: 15px;
-}
-
 .imgBlock {
   width: 70vw;
   margin-left:15vw;
+}
+
+.question {
+  background-color: rgb(198, 174, 174) ;
+  padding:  5px 20px 30px 5px; 
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.subtitle {
+  font-size: 1.5em;
+
+  font-weight: bold; 
+  text-align: center;
+}
+
+
+/* Стили для кнопок выбора ответов */
+input[type=radio]{
+  opacity: 0;
+}
+.checked{
+  /* display: inline-flex; */
+  width: 40vw;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 10px 30px;
+  border-radius: 15px;
+  margin-left: 12vw;
+}
+input[type=radio]:checked + .checked{
+  background: gray;
 }
