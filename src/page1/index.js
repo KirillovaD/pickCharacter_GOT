@@ -1,4 +1,5 @@
-console.log('Hello')
+// import {openModal} from "./js/modal";
+
 
 let radio = new Audio();
 radio.src = "assets/audio.mp3";
@@ -14,6 +15,7 @@ document.querySelector('#off').onclick = function() {
 
 
 // Подсчет баллов и выбор персонажа
+
 
 // $(document).ready(function() {
 //     $("form#user-input").submit(function(event) {
@@ -114,3 +116,19 @@ document.querySelector('#off').onclick = function() {
   
 //     });
 //   });
+
+//модальное окно пока тут
+const modalBtn = document.querySelector(".modal__btn");
+const modalBg = document.querySelector(".modal__bg");
+const modalClose = document.querySelector(".modal__close");
+
+modalBtn.addEventListener("click", function(){
+    modalBg.classList.add("modal__bg_active");
+
+});
+
+modalClose.addEventListener("click", function(){
+  modalBg.classList.remove("modal__bg_active");
+
+})
+

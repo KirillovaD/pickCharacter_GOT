@@ -1,9 +1,12 @@
+
 @font-face {
   font-family: 'GameofThronesKG';
   src: url('assets/GameofThronesKG/GameofThronesKG.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+@import '/src/page1/css/modal.css';
 
 body{
   font-family: Arial, Helvetica, sans-serif;
