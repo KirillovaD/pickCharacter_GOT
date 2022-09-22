@@ -1,4 +1,4 @@
-// import {openModal} from "./js/modal";
+// import modal from "./js/modal.js";
 
 
 let radio = new Audio();
@@ -117,7 +117,7 @@ document.querySelector('#off').onclick = function() {
 //     });
 //   });
 
-//модальное окно пока тут
+// модальное окно пока тут
 const modalBtn = document.querySelector(".modal__btn");
 const modalBg = document.querySelector(".modal__bg");
 const modalClose = document.querySelector(".modal__close");

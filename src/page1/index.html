@@ -13,20 +13,46 @@
 
 <body>
 
-  <button id="on" style="font-family: 'GameofThronesKG';"><img src="assets/on.png" alt="" width="27px"></button>
-  <button id="off" style="font-family: 'GameofThronesKG';"> Выключить звук</button>
+  <main>
+    <button id="on" style="font-family: 'GameofThronesKG';"><img src="assets/on.png" alt="" width="27px"></button>
+    <button id="off" style="font-family: 'GameofThronesKG';"> Выключить звук</button>
+    <section class="text"> 
+      <h1 >КТО ТЫ ИЗ ИГРЫ ПРЕСТОЛОВ?</h1>
+      <button class="modal__btn">Начать</button>
+    </section>
 
-  <p class="title">КТО ТЫ ИЗ ИГРЫ ПРЕСТОЛОВ?</p>
-  <div class="imgBlock">
-    <img src="assets/image.png" alt="" class="gotFamily">
-
+    <!-- <div class="modal__bg">
+      <div class="modal">
+        <h2>Что для вас в жизни имеет наибольшее значение?</h2>
+        <div class="inputs">
+          <div>
+            <input type="checkbox" id="justice" name="1st_quest" name="" />
+            <label for="">Справедливость</label>
+          </div>
+          <div>
+            <input type="checkbox" id="power" name="1st_quest" name="" />
+            <label for="">Власть</label>
+          </div>
+          <div>
+            <input type="checkbox" id="honor" name="1st_quest" name="" />
+            <label for="">Честь и верность</label>
+          </div>
+          <div>
+            <input type="checkbox" id="bravery" name="1st_quest" name="" />
+            <label for="">Храбрость</label>
+          </div>
+        </div>
+        <span class="modal__close">X</span>
+        <span class="modal__prev">&lt</span>
+        <span class="modal__next">&gt</span>
+      </div> -->
+  
+  
     <!--Блок с вопросами -->
-    <div class="container">
-
-
-      <!-- Первый вопрос -->
-      <div class="question">
-        <p class="subtitle">Насколько сильно вы любите деньги?</p>
+     <!-- Первый вопрос -->
+    <div class="modal__bg">
+      <div class="modal">
+        <h2>Насколько сильно вы любите деньги?</h2>
         <label>
           <input type="radio" name="money" value="1">
           <div class="checked">Честь - это единственная валюта</div>
@@ -46,11 +72,17 @@
           <input type="radio" name="money" value="4">
           <div class="checked">Кому нужны деньги, когда есть дипломатия?</div>
         </label>
+
+        <span class="modal__close">X</span>
+        <span class="modal__prev">&lt</span>
+        <span class="modal__next">&gt</span>
       </div>
+    </div>
+
 
 
       <!-- Второй вопрос -->
-      <div class="question">
+      <!-- <div class="question">
         <p class="subtitle">Что вы чувствуете по отношению к своей семье?</p>
         <label>
           <input type="radio" name="family" value="1">
@@ -71,11 +103,11 @@
           <input type="radio" name="family" value="4">
           <div class="checked">Я ненавижу их всех и желаю им смерти!</div>
         </label>
-      </div>
+      </div> -->
 
 
       <!-- Третий вопрос -->
-      <div class="question">
+      <!-- <div class="question">
         <p class="subtitle">Каково ваше отношение к религии?</p>
         <label>
           <input type="radio" name="religion" value="1">
@@ -96,44 +128,24 @@
           <input type="radio" name="religion" value="4">
           <div class="checked">Если это даст мне спасение - я заплачу деньгами</div>
         </label>
-      </div>
+      </div> -->
 
   
-  <!--
-  <button class="modal__btn">Начать</button>
+  
+  
 
   
-  <div class="modal__bg">
-    <div class="modal">
-      <h2>Что для вас в жизни имеет наибольшее значение?</h2>
-      <div class="inputs">
-        <div>
-          <input type="checkbox" id="justice" name="1st_quest" name="" />
-          <label for="">Справедливость</label>
-        </div>
-        <div>
-          <input type="checkbox" id="power" name="1st_quest" name="" />
-          <label for="">Власть</label>
-        </div>
-        <div>
-          <input type="checkbox" id="honor" name="1st_quest" name="" />
-          <label for="">Честь и верность</label>
-        </div>
-        <div>
-          <input type="checkbox" id="bravery" name="1st_quest" name="" />
-          <label for="">Храбрость</label>
-        </div>
-      </div>
-      <span class="modal__close">X</span>
-      <span class="modal__prev">&lt</span>
-      <span class="modal__next">&gt</span>
-
+  
       
 
 
     </div>
 
-  </div> -->
+
+  </main>
+
+  
+  
 
 
 
