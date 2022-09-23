@@ -13,20 +13,33 @@
 
 <body>
 
-  <button id="on" style="font-family: 'GameofThronesKG';"><img src="assets/on.png" alt="" width="27px"></button>
-  <button id="off" style="font-family: 'GameofThronesKG';"> Выключить звук</button>
+  <main>
+    <header class="header">
+      <img class="img__radio_on" id="on" src="assets/on.png" alt="" width="30" />
+      <img class="img__radio_off" id="off" src="assets/off.png" alt="" width="33" />
+      <img class="img__question" src="./assets/qestion.png" alt="Дополнительная инфорамия" width="30" />
+    </header>
 
-  <p class="title">КТО ТЫ ИЗ ИГРЫ ПРЕСТОЛОВ?</p>
-  <div class="imgBlock">
-    <img src="assets/image.png" alt="" class="gotFamily">
+    <aside class="modal__bg">
+      <div class="modal">
+        <p class="modal__text">Игра Престолов - сериал обладающей огромной внутренней историей, целый мир, населенный
+          интереснейшими персонажами. Отношения сложны, атмосфера накаляется сезон за сезоном, страсти кипят… А что бы
+          было, если бы вы попали в удивительный мир Игры Престолов?
+          Узнать, кем бы вы были в Игре Престолов вам поможет этот тест!</p>
+      </div>
 
-    <!--Блок с вопросами -->
-    <div class="container">
+    </aside>
 
+    <section class="text">
+      <h1>КТО ТЫ ИЗ ИГРЫ ПРЕСТОЛОВ?</h1>
+      <button class="modal__btn">Начать</button>
+    </section>
 
-      <!-- Первый вопрос -->
-      <div class="money">
-        <p class="subtitle">Насколько сильно вы любите деньги?</p>
+    <!--Модальные окна -->
+    <!-- Первый вопрос -->
+    <div class="modal__bg">
+      <div class="modal modal__1">
+        <h2>Насколько сильно вы любите деньги?</h2>
         <label>
           <input type="radio" name="money" value="1">
           <div class="checked">Честь - это единственная валюта</div>
@@ -46,12 +59,15 @@
           <input type="radio" name="money" value="4">
           <div class="checked">Кому нужны деньги, когда есть дипломатия?</div>
         </label>
+
+        <span class="modal__close">X</span>
+        <span class="modal__prev">&lt</span>
+        <span class="modal__next">&gt</span>
       </div>
 
-
       <!-- Второй вопрос -->
-      <div class="family">
-        <p class="subtitle">Что вы чувствуете по отношению к своей семье?</p>
+      <div class="modal modal__2">
+        <h2>Что вы чувствуете по отношению к своей семье?</h2>
         <label>
           <input type="radio" name="family" value="1">
           <div class="checked">Мы близки. Возможно даже слишком</div>
@@ -71,12 +87,15 @@
           <input type="radio" name="family" value="4">
           <div class="checked">Я ненавижу их всех и желаю им смерти!</div>
         </label>
+
+        <span class="modal__close">X</span>
+        <span class="modal__prev">&lt</span>
+        <span class="modal__next">&gt</span>
       </div>
 
-
       <!-- Третий вопрос -->
-      <div class="religion">
-        <p class="subtitle">Каково ваше отношение к религии?</p>
+      <div class="modal modal__3">
+        <h2>Каково ваше отношение к религии?</h2>
         <label>
           <input type="radio" name="religion" value="1">
           <div class="checked">Вообще-то я - бог</div>
@@ -96,57 +115,17 @@
           <input type="radio" name="religion" value="4">
           <div class="checked">Если это даст мне спасение - я заплачу деньгами</div>
         </label>
+
+        <span class="modal__close">X</span>
+        <span class="modal__prev">&lt</span>
+        <span class="modal__next">&gt</span>
       </div>
-
-      <svg class="icon icon-cart" aria-hidden="true" focusable="false" role="presentation"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
-        <path fill="currentColor" fill-rule="evenodd"
-          d="M20.5 6.5a4.75 4.75 0 00-4.75 4.75v.56h-3.16l-.77 11.6a5 5 0 004.99 5.34h7.38a5 5 0 004.99-5.33l-.77-11.6h-3.16v-.57A4.75 4.75 0 0020.5 6.5zm3.75 5.31v-.56a3.75 3.75 0 10-7.5 0v.56h7.5zm-7.5 1h7.5v.56a3.75 3.75 0 11-7.5 0v-.56zm-1 0v.56a4.75 4.75 0 109.5 0v-.56h2.22l.71 10.67a4 4 0 01-3.99 4.27h-7.38a4 4 0 01-4-4.27l.72-10.67h2.22z" />
-      </svg>
-      <!--
-  <button class="modal__btn">Начать</button>
-
-  
-  <div class="modal__bg">
-    <div class="modal">
-      <h2>Что для вас в жизни имеет наибольшее значение?</h2>
-      <div class="inputs">
-        <div>
-          <input type="checkbox" id="justice" name="1st_quest" name="" />
-          <label for="">Справедливость</label>
-        </div>
-        <div>
-          <input type="checkbox" id="power" name="1st_quest" name="" />
-          <label for="">Власть</label>
-        </div>
-        <div>
-          <input type="checkbox" id="honor" name="1st_quest" name="" />
-          <label for="">Честь и верность</label>
-        </div>
-        <div>
-          <input type="checkbox" id="bravery" name="1st_quest" name="" />
-          <label for="">Храбрость</label>
-        </div>
-      </div>
-      <span class="modal__close">X</span>
-      <span class="modal__prev">&lt</span>
-      <span class="modal__next">&gt</span>
-
-      
 
 
     </div>
 
-  </div> -->
 
-
-
-
-
-
-
-
-
+  </main>
 </body>
 
 </html>

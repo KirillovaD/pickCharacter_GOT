@@ -1,4 +1,4 @@
-// import {openModal} from "./js/modal";
+// import modal from "./js/modal.js";
 
 
 let radio = new Audio();
@@ -74,6 +74,8 @@ if (moneyInput === 1) {
       
            console.log(lanister);
       
+
+// Подсчет баллов и выбор персонажа
 
 
 //Выбор персонажа
@@ -184,18 +186,28 @@ if (stark >= baratheon && stark >= lanister &&
 //     });
 //   });
 
-//модальное окно пока тут
+//Блок инфо
+
+const info = document.querySelector(".img__question");
+info.addEventListener("click", openModal);
+info.addEventListener("mouseout",closeModal);
+
+
+
+// модальное окно пока тут
 const modalBtn = document.querySelector(".modal__btn");
 const modalBg = document.querySelector(".modal__bg");
 const modalClose = document.querySelector(".modal__close");
 
-modalBtn.addEventListener("click", function(){
+
+
+modalBtn.addEventListener("click", openModal);
+function openModal(){
     modalBg.classList.add("modal__bg_active");
+}
 
-});
-
-modalClose.addEventListener("click", function(){
+modalClose.addEventListener("click", closeModal);
+function closeModal(){
   modalBg.classList.remove("modal__bg_active");
-
-})
+}
 

@@ -5,45 +5,75 @@
   font-weight: normal;
   font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
-@import '/src/page1/css/modal.css';
+/* @import './css/modal.css'; */
 
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url(assets/background5.png);
-  background: opacity 30%;
+main{
+  background-image: url(assets/Group\ 4.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 0;
+
 }
 
-.title {
-  font-family: 'GameofThronesKG';
+.header {
+  display: flex;
+  align-items:baseline;
+  padding: 1% 2%;
+  gap: 1%;
+}
 
-  text-shadow: 1px 1px 2px white;
+.header img{
+  cursor: pointer;
+}
+.header img:last-child {
+  position: absolute;
+  right: 2%;
+}
+/* .img__question {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+}
+.img__radio_on {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+
+}
+.img__radio_off{
+  position: absolute;
+  top: 3%;
+  left: 6%;
+} */
+
+.text{
+  margin-top: 37%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+h1 {
+  font-family: 'GameofThronesKG';
+  
+  color: rgb(239, 239, 239);
+  /* text-shadow: 1px 1px rgb(255, 255, 255); */
+  letter-spacing: 3px;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
-.gotFamily {
-  width: 70vw;
-}
-
-.imgBlock {
-  width: 70vw;
-  margin-left:15vw;
-}
-
-.question {
-  background-color: rgb(198, 174, 174) ;
-  padding:  5px 20px 30px 5px; 
-  border-radius: 20px;
-  margin: 5px;
-}
-
-.subtitle {
+h2 {
   font-size: 1.5em;
 
   font-weight: bold; 
   text-align: center;
+  padding: 0;
 }
 
 
@@ -52,15 +82,107 @@ input[type=radio]{
   opacity: 0;
 }
 .checked{
-  /* display: inline-flex; */
+  display: flex;
   width: 40vw;
   align-items: center;
   justify-content: center;
-  background: white;
+
+  background: rgb(221, 221, 221);
   padding: 10px 30px;
   border-radius: 15px;
-  margin-left: 12vw;
+  margin-left: 7vw;
 }
 input[type=radio]:checked + .checked{
-  background: gray;
+  background: rgb(192, 192, 192);
+}
+/* модальное окно с инфой*/
+
+.modal__text {
+  padding: 10% 8%;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+
+/* модальноые окна с вопросами*/
+
+.modal__btn{
+  padding: 10px 20px;
+  width: 10%;
+  margin: 20px;
+ 
+  
+  color: rgb(22, 22, 22);
+  font-size: 1.25em;
+  border: none;
+  border-radius: 2em;
+
+  background: #f8f8f8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.08);
+  
+
+
+  margin: 0;
+  cursor: pointer;
+
+
+}
+
+
+.modal__bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s opacity 0.5s;
+
+
+}
+.modal__bg_active{
+  visibility: visible;
+  opacity: 1;
+
+
+}
+.modal{
+  position: relative;
+  background-color: #f8f8f8;;
+  width: 60%;
+  height: 50%;
+  color: rgb(22, 22, 22);
+
+}
+
+
+.modal__close{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  /* font-weight: bold; */
+}
+
+.modal__prev{
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  cursor: pointer;
+  font-size: 1.5em;
+
+}
+.modal__next{
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 1.5em;
 }
