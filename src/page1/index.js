@@ -2,20 +2,87 @@
 
 
 let radio = new Audio();
-radio.src = "assets/audio.mp3";
+    radio.src = "assets/audio.mp3";
+
 
 document.querySelector('#on').onclick = function() {
     radio.play()
 }
 
 document.querySelector('#off').onclick = function() {
+    
     radio.pause()
 };
 
+// Подсчет баллов
+let stark = 0;
+let baratheon = 0;
+let lanister = 0;
+let targarian = 0;
+let tully = 0;
+let tyrell = 0;
+let greyjoy = 0;
+
+let moneyInput = parseInt(document.querySelector('input[name="money"]:checked').value);
+let familyInput = parseInt(document.querySelector('input[name="family"]:checked').value);
+let religionInput = parseInt(document.querySelector('input[name="religion"]:checked').value);
 
 
-// Подсчет баллов и выбор персонажа
+if (moneyInput === 1) {
+            stark += 1;
+            greyjoy += 1;
+          } else if (moneyInput === 2) {
+            baratheon += 1;
+            lanister += 1;
+          } else if (moneyInput === 3) {
+            lanister += 1;
+            tyrell += 1;
+          } else if (moneyInput === 4) {
+            targarian += 1;
+            tully += 1;
+            stark += 1;
+          }
+      
+          if (familyInput === 1) {
+            lanister += 1;
+            targarian +=1;
+          } else if (familyInput === 2) {
+            stark += 1;
+          } else if (familyInput === 3) {
+            baratheon += 1;
+            tully += 1;
+            tyrell += 1;
+          } else if (familyInput === 4) {
+            greyjoy += 1;
+            lanister += 1;
+          }
+      
+          if (religionInput === 1) {
+            targarian += 1;
+            baratheon += 1;
+          } else if (religionInput === 2) {
+            stark += 1;
+            tully += 1;
+          } else if (religionInput === 3) {
+            lanister += 1;
+            tyrell += 1;
+          } else if (religionInput === 4) {
+            tyrell += 1;
+            greyjoy += 1;
+            lanister += 1;
+          }
+      
+           console.log(lanister);
+      
 
+
+//Выбор персонажа
+
+if (stark >= baratheon && stark >= lanister &&
+            stark >= targarian && stark >= tully &&
+            stark >= tyrell && stark >= greyjoy) {
+              let result = stark;
+          }
 
 // $(document).ready(function() {
 //     $("form#user-input").submit(function(event) {
