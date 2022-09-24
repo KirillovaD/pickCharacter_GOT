@@ -1,4 +1,4 @@
-
+@import './css/modal.css';
 @font-face {
   font-family: 'GameofThronesKG';
   src: url('assets/GameofThronesKG/GameofThronesKG.woff') format('woff');
@@ -7,7 +7,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
-/* @import './css/modal.css'; */
+
 
 main{
   background-image: url(assets/Group\ 4.png);
@@ -32,22 +32,6 @@ main{
   position: absolute;
   right: 2%;
 }
-/* .img__question {
-  position: absolute;
-  top: 3%;
-  right: 3%;
-}
-.img__radio_on {
-  position: absolute;
-  top: 3%;
-  left: 3%;
-
-}
-.img__radio_off{
-  position: absolute;
-  top: 3%;
-  left: 6%;
-} */
 
 .text{
   margin-top: 37%;
@@ -69,9 +53,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-family: 'Playfair Display SC', serif;
+  line-height: 1em;
+  font-size: 1.25em;
 
-  font-weight: bold; 
+  
   text-align: center;
   padding: 0;
 }
@@ -94,95 +80,4 @@ input[type=radio]{
 }
 input[type=radio]:checked + .checked{
   background: rgb(192, 192, 192);
-}
-/* модальное окно с инфой*/
-
-.modal__text {
-  padding: 10% 8%;
-  font-family: 'Playfair Display SC', serif;
-  font-size: 1.25em;
-  line-height: 1.5em;
-}
-
-
-/* модальноые окна с вопросами*/
-
-.modal__btn{
-  padding: 10px 20px;
-  width: 10%;
-  margin: 20px;
- 
-  
-  color: rgb(22, 22, 22);
-  font-size: 1.25em;
-  border: none;
-  border-radius: 2em;
-
-  background: #f8f8f8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.08);
-  
-
-
-  margin: 0;
-  cursor: pointer;
-
-
-}
-
-
-.modal__bg{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s opacity 0.5s;
-
-
-}
-.modal__bg_active{
-  visibility: visible;
-  opacity: 1;
-
-
-}
-.modal{
-  position: relative;
-  background-color: #f8f8f8;;
-  width: 60%;
-  height: 50%;
-  color: rgb(22, 22, 22);
-
-}
-
-
-.modal__close{
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  /* font-weight: bold; */
-}
-
-.modal__prev{
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
-  cursor: pointer;
-  font-size: 1.5em;
-
-}
-.modal__next{
-  position: absolute;
-  bottom: 20px;
-  right: 30px;
-  cursor: pointer;
-  font-size: 1.5em;
 }

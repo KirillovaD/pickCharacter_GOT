@@ -118,28 +118,34 @@ document.querySelector('#off').onclick = function() {
 //     });
 //   });
 
-//Блок инфо
+//модальное окно с инфой
 
 const info = document.querySelector(".img__question");
-info.addEventListener("click", openModal);
-info.addEventListener("mouseout",closeModal);
+const modalBg = document.querySelectorAll('.modal__bg');//nodelist всех модальных окон
+
+info.addEventListener("click", openModalInfo);
+function openModalInfo(){
+    modalBg[0].classList.add("modal__bg_active");
+}
+
+info.addEventListener("mouseout",closeModalInfo);
+
+function closeModalInfo(){
+    modalBg[0].classList.remove("modal__bg_active");
+}
 
 
-
-// модальное окно пока тут
+// // модальное окно вопросы
 const modalBtn = document.querySelector(".modal__btn");
-const modalBg = document.querySelector(".modal__bg");
-const modalClose = document.querySelector(".modal__close");
-
-
+const modalCloseBtn = document.querySelector(".modal__close");
 
 modalBtn.addEventListener("click", openModal);
 function openModal(){
-    modalBg.classList.add("modal__bg_active");
+    modalBg[1].classList.add("modal__bg_active");
 }
 
-modalClose.addEventListener("click", closeModal);
+modalCloseBtn.addEventListener("click", closeModal);
 function closeModal(){
-  modalBg.classList.remove("modal__bg_active");
+  modalBg[1].classList.remove("modal__bg_active");
 }
 
