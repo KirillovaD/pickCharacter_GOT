@@ -1,4 +1,6 @@
-import {openModalInfo,closeModalInfo, openModal, closeModal} from './js/modal.js'; 
+import {openModalInfo,closeModalInfo} from './js/modalInfo.js'; 
+import {openModal, closeModal} from './js/modal.js'; 
+import {openNext, openPrev} from './js/modal_carousel.js'; 
 
 
 let radio = new Audio();
@@ -118,5 +120,20 @@ document.querySelector('#off').onclick = function() {
 //     });
 //   });
 
+let labels = document.getElementsByTagName("label");
+const modalNode = document.querySelectorAll(".modalQuestions");
 
 
+for (let i = 0; i < labels.length; i++ ){
+    labels[i].addEventListner("click", onCheckNext);
+} 
+function onCheckNext(){
+    for (let i = 0; i < modalNode.length; i++){
+        modalNode[i].classList.add("modalQuestions_hidden");
+      }
+      modalNode[current].classList.remove("modalQuestions_hidden");
+
+}
+ 
+      
+ 
