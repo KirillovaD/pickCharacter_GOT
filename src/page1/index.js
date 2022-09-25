@@ -4,16 +4,30 @@ import {openNext, openPrev} from './js/modal_carousel.js';
 
 
 let radio = new Audio();
-radio.src = "assets/audio.mp3";
+    radio.src = "assets/audio.mp3";
+
 
 document.querySelector('#on').onclick = function() {
     radio.play()
 }
 
 document.querySelector('#off').onclick = function() {
+    
     radio.pause()
 };
 
+// Подсчет баллов
+let stark = 0;
+let baratheon = 0;
+let lanister = 0;
+let targarian = 0;
+let tully = 0;
+let tyrell = 0;
+let greyjoy = 0;
+
+let moneyInput = parseInt(document.querySelector('input[name="money"]:checked').value);
+let familyInput = parseInt(document.querySelector('input[name="family"]:checked').value);
+let religionInput = parseInt(document.querySelector('input[name="religion"]:checked').value);
 
 
 //Функция берет результат из формы и определяет персонажа
