@@ -1,17 +1,33 @@
-// import modal from "./js/modal.js";
+import {openModalInfo,closeModalInfo} from './js/modalInfo.js'; 
+import {openModal, closeModal} from './js/modal.js'; 
+import {openNext, openPrev} from './js/modal_carousel.js'; 
 
 
 let radio = new Audio();
-radio.src = "assets/audio.mp3";
+    radio.src = "assets/audio.mp3";
+
 
 document.querySelector('#on').onclick = function() {
     radio.play()
 }
 
 document.querySelector('#off').onclick = function() {
+    
     radio.pause()
 };
 
+// Подсчет баллов
+let stark = 0;
+let baratheon = 0;
+let lanister = 0;
+let targarian = 0;
+let tully = 0;
+let tyrell = 0;
+let greyjoy = 0;
+
+let moneyInput = parseInt(document.querySelector('input[name="money"]:checked').value);
+let familyInput = parseInt(document.querySelector('input[name="family"]:checked').value);
+let religionInput = parseInt(document.querySelector('input[name="religion"]:checked').value);
 
 
 //Функция берет результат из формы и определяет персонажа
@@ -115,28 +131,25 @@ if (stark >= baratheon && stark >= lanister &&
 ) ;
 
 
-//Блок инфо
-
-const info = document.querySelector(".img__question");
-info.addEventListener("click", openModal);
-info.addEventListener("mouseout",closeModal);
+let labels = document.getElementsByTagName("label");
+const modalNode = document.querySelectorAll(".modalQuestions");
 
 
+for (let i = 0; i < labels.length; i++ ){
+    labels[i].addEventListner("click", onCheckNext);
+} 
+function onCheckNext(){
+    for (let i = 0; i < modalNode.length; i++){
+        modalNode[i].classList.add("modalQuestions_hidden");
+      }
+      modalNode[current].classList.remove("modalQuestions_hidden");
 
-// модальное окно пока тут
-const modalBtn = document.querySelector(".modal__btn");
-const modalBg = document.querySelector(".modal__bg");
-const modalClose = document.querySelector(".modal__close");
-
-
-
-modalBtn.addEventListener("click", openModal);
-function openModal(){
-    modalBg.classList.add("modal__bg_active");
 }
 
-modalClose.addEventListener("click", closeModal);
-function closeModal(){
-modalBg.classList.remove("modal__bg_active");
-}
+
+//modalClose.addEventListener("click", closeModal);
+//function closeModal(){
+//modalBg.classList.remove("modal__bg_active");
+//}
+
 
