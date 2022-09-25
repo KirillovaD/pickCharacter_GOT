@@ -1,4 +1,6 @@
-// import modal from "./js/modal.js";
+import {openModalInfo,closeModalInfo} from './js/modalInfo.js'; 
+import {openModal, closeModal} from './js/modal.js'; 
+import {openNext, openPrev} from './js/modal_carousel.js'; 
 
 
 let radio = new Audio();
@@ -115,28 +117,25 @@ if (stark >= baratheon && stark >= lanister &&
 ) ;
 
 
-//Блок инфо
-
-const info = document.querySelector(".img__question");
-info.addEventListener("click", openModal);
-info.addEventListener("mouseout",closeModal);
+let labels = document.getElementsByTagName("label");
+const modalNode = document.querySelectorAll(".modalQuestions");
 
 
+for (let i = 0; i < labels.length; i++ ){
+    labels[i].addEventListner("click", onCheckNext);
+} 
+function onCheckNext(){
+    for (let i = 0; i < modalNode.length; i++){
+        modalNode[i].classList.add("modalQuestions_hidden");
+      }
+      modalNode[current].classList.remove("modalQuestions_hidden");
 
-// модальное окно пока тут
-const modalBtn = document.querySelector(".modal__btn");
-const modalBg = document.querySelector(".modal__bg");
-const modalClose = document.querySelector(".modal__close");
-
-
-
-modalBtn.addEventListener("click", openModal);
-function openModal(){
-    modalBg.classList.add("modal__bg_active");
 }
 
-modalClose.addEventListener("click", closeModal);
-function closeModal(){
-modalBg.classList.remove("modal__bg_active");
-}
+
+//modalClose.addEventListener("click", closeModal);
+//function closeModal(){
+//modalBg.classList.remove("modal__bg_active");
+//}
+
 
