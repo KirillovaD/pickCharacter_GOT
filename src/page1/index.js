@@ -16,18 +16,10 @@ document.querySelector('#off').onclick = function() {
     radio.pause()
 };
 
-// Подсчет баллов
-let stark = 0;
-let baratheon = 0;
-let lanister = 0;
-let targarian = 0;
-let tully = 0;
-let tyrell = 0;
-let greyjoy = 0;
 
-let moneyInput = parseInt(document.querySelector('input[name="money"]:checked').value);
-let familyInput = parseInt(document.querySelector('input[name="family"]:checked').value);
-let religionInput = parseInt(document.querySelector('input[name="religion"]:checked').value);
+
+
+
 
 
 //Функция берет результат из формы и определяет персонажа
@@ -46,6 +38,11 @@ let greyjoy = 0;
 let moneyInput = parseInt(document.querySelector('input[name="money"]:checked').value);
 let familyInput = parseInt(document.querySelector('input[name="family"]:checked').value);
 let religionInput = parseInt(document.querySelector('input[name="religion"]:checked').value);
+
+console.log(moneyInput);
+console.log(familyInput);
+console.log(religionInput);
+
 
 // Подсчет баллов
 if (moneyInput === 1) {
@@ -93,42 +90,68 @@ lanister += 1;
 }
 
 // Выбор персонажа
+let id;
 if (stark >= baratheon && stark >= lanister &&
     stark >= targarian && stark >= tully &&
     stark >= tyrell && stark >= greyjoy) {
-    document.getElementById("result").innerHTML = "Старк";
+    localStorage.setItem("got", "Старк");
+
+    window.location.href = '../page2/index.html';
 
 } else if (lanister >= baratheon && lanister >= stark &&
     lanister >= targarian && lanister >= tully &&
     lanister >= tyrell && lanister >= greyjoy) {
-        document.getElementById("result").innerHTML = "Ланистер";
+    localStorage.setItem("got", "Ланистер");
+
+    window.location.href = '../page2/index.html';
+
 } else if (targarian >= baratheon && targarian >= stark &&
     targarian >= lanister && targarian >= tully &&
     targarian >= tyrell && targarian >= greyjoy) {
-        document.getElementById("result").innerHTML = "Таргариан";
+    localStorage.setItem("got", "Таргариан");
+
+    window.location.href = '../page2/index.html';
+    
+
 
 } else if (baratheon >= targarian && baratheon >= stark &&
     baratheon >= lanister && baratheon >= tully &&
     baratheon >= tyrell && baratheon >= greyjoy) {
-        document.getElementById("result").innerHTML = "Баратеон";
+    localStorage.setItem("got", "Баратеон");
+
+    window.location.href = '../page2/index.html';
 
 } else if (tully >= targarian && tully >= stark &&
     tully >= lanister && tully >= baratheon &&
     tully >= tyrell && tully >= greyjoy) {
-        document.getElementById("result").innerHTML = "Тулли";
+    localStorage.setItem("got", "Тулли");
+
+    window.location.href = '../page2/index.html';
+    
 
 } else if (greyjoy >= targarian && greyjoy >= stark &&
     greyjoy >= lanister && greyjoy >= baratheon &&
     greyjoy >= tyrell && greyjoy >= tully) {
-        document.getElementById("result").innerHTML = "Грей Джой";
+    localStorage.setItem("got", "Грей Джой");
+
+    window.location.href = '../page2/index.html';
+    
 
 } else if (tyrell >= targarian && tyrell >= stark &&
     tyrell >= lanister && tyrell >= baratheon &&
     tyrell >= greyjoy && tyrell >= tully) {
-        document.getElementById("result").innerHTML = "Тирелл";
+        localStorage.setItem("got", "Тирелл");
+
+    window.location.href = '../page2/index.html';
+    
 }
+
+console.log(id);
+
+
 }
 ) ;
+
 
 
 let labels = document.getElementsByTagName("label");
@@ -151,5 +174,6 @@ function onCheckNext(){
 //function closeModal(){
 //modalBg.classList.remove("modal__bg_active");
 //}
+
 
 

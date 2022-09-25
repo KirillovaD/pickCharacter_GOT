@@ -1,5 +1,5 @@
 body{
-    background-image: url(/src/page1/assets/background8.jpg);
+    background-image: url(../page1/assets/background8.jpg);
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,16 +13,12 @@ body{
         border-radius: 10px;
     }
 
-    h1 {
-        text-align: center;
-        padding-top: 30px;
-    }
-
-    h2 {
+    #about {
         padding: 10px 30px 30px 30px;
     }
 
-    .imgResult {
+    #avatar {
     width: calc(40vw - 60px);
-    margin: 0 30px 0 30px;
+    margin: 30px 30px 0 30px;
     }
+
