@@ -11,7 +11,7 @@ let current = 0;
 export function openNext(){
   
   if (current +1 == modalNode.length){
-    nextBtn.style.visibility = "hidden";
+    return;
   } else {
     current ++;
   }
@@ -27,7 +27,7 @@ export function openNext(){
 export function openPrev(){
   
   if (current - 1 == -1){
-    prevBtn.style.visibility = "hidden";
+    return;
   } else {
     current --;
   }
