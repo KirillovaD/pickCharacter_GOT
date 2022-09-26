@@ -154,26 +154,22 @@ console.log(id);
 
 
 
-// let labels = document.getElementsByTagName("label");
-// const modalNode = document.querySelectorAll(".modalQuestions");
+const inputs = document.querySelectorAll("input");
+const modalNode = document.querySelectorAll(".modalQuestions");
 
+console.log(inputs)
+for (let i = 0; i < inputs.length; i++ ){
+    console.log(inputs[i]);
+    inputs[i].addEventListener("click", onCheckNext);
+    
+} 
+function onCheckNext(){
+    for (let i = 0; i < modalNode.length; i++){
+        modalNode[i].classList.add("modalQuestions_hidden");
+      }
+      modalNode[current].classList.remove("modalQuestions_hidden");
 
-// for (let i = 0; i < labels.length; i++ ){
-//     labels[i].addEventListner("click", onCheckNext);
-// } 
-// function onCheckNext(){
-//     for (let i = 0; i < modalNode.length; i++){
-//         modalNode[i].classList.add("modalQuestions_hidden");
-//       }
-//       modalNode[current].classList.remove("modalQuestions_hidden");
-
-// }
-
-
-//modalClose.addEventListener("click", closeModal);
-//function closeModal(){
-//modalBg.classList.remove("modal__bg_active");
-//}
+}
 
 
 

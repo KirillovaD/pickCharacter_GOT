@@ -8,7 +8,7 @@ const modalNode = document.querySelectorAll(".modalQuestions");
 modalBtn.addEventListener("click", openModal);
 export function openModal(){
     modalBg[1].classList.add("modal__bg_active");
-    modalNode[0].classList.remove(".modalQuestions_hidden");
+    modalNode[0].classList.add("modalQuestions_active");
 
 }
 
