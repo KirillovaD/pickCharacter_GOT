@@ -78,7 +78,10 @@ input[type=radio]{
   background: rgb(221, 221, 221);
   padding: 10px 30px;
   border-radius: 15px;
-  margin-left: 7vw;
+
+  font-family: 'Playfair Display SC', serif;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
 }
 input[type=radio]:checked + .checked{
   background: rgb(192, 192, 192);

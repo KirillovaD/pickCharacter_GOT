@@ -11,31 +11,29 @@ let current = 0;
 export function openNext(){
   
   if (current +1 == modalNode.length){
-    nextBtn.style.visibility = "hidden";
+    return;
   } else {
     current ++;
   }
   for (let i = 0; i < modalNode.length; i++){
-    modalNode[i].classList.add("modalQuestions_hidden");
+    modalNode[i].classList.remove("modalQuestions_active");
   }
-  modalNode[current].classList.remove("modalQuestions_hidden");
-  nextBtn.style.visibility = "visible";
+  modalNode[current].classList.add("modalQuestions_active");
+  
 }
-
-
 
 export function openPrev(){
   
   if (current - 1 == -1){
-    prevBtn.style.visibility = "hidden";
+    return;
   } else {
     current --;
   }
 
   for (let i = 0; i < modalNode.length; i++){
-    modalNode[i].classList.add("modalQuestions_hidden");
+    modalNode[i].classList.remove("modalQuestions_active");
   }
-  modalNode[current].classList.remove("modalQuestions_hidden");
+  modalNode[current].classList.add("modalQuestions_active");
  
 
 
