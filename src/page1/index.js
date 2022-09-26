@@ -154,20 +154,20 @@ console.log(id);
 
 
 
-let labels = document.getElementsByTagName("label");
-const modalNode = document.querySelectorAll(".modalQuestions");
+// let labels = document.getElementsByTagName("label");
+// const modalNode = document.querySelectorAll(".modalQuestions");
 
 
-for (let i = 0; i < labels.length; i++ ){
-    labels[i].addEventListner("click", onCheckNext);
-} 
-function onCheckNext(){
-    for (let i = 0; i < modalNode.length; i++){
-        modalNode[i].classList.add("modalQuestions_hidden");
-      }
-      modalNode[current].classList.remove("modalQuestions_hidden");
+// for (let i = 0; i < labels.length; i++ ){
+//     labels[i].addEventListner("click", onCheckNext);
+// } 
+// function onCheckNext(){
+//     for (let i = 0; i < modalNode.length; i++){
+//         modalNode[i].classList.add("modalQuestions_hidden");
+//       }
+//       modalNode[current].classList.remove("modalQuestions_hidden");
 
-}
+// }
 
 
 //modalClose.addEventListener("click", closeModal);

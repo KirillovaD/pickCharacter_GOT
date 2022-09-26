@@ -19,10 +19,8 @@ export function openNext(){
     modalNode[i].classList.add("modalQuestions_hidden");
   }
   modalNode[current].classList.remove("modalQuestions_hidden");
-  nextBtn.style.visibility = "visible";
+  
 }
-
-
 
 export function openPrev(){
   

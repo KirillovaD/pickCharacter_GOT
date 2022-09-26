@@ -32,10 +32,9 @@
   cursor: pointer;
 
   transition: 0.5s;
-
-  
   
 }
+
 .modal__btn span{
   cursor: pointer;
   display: inline-block;
@@ -90,8 +89,8 @@
   visibility: visible;
   opacity: 1;
 
-
 }
+
 .modal__bg_active .modal{
   transform: translate(0px, 0px); /* включаем выплываение сверху */
   opacity: 1;
@@ -111,11 +110,11 @@
   visibility: hidden;
   opacity: 0;
 }
-/* .modalQuestions_active{
+.modalQuestions_active{
   visibility: visible;
   opacity: 1;
 
-} */
+}
 
 .modal__close{
   position: absolute;
