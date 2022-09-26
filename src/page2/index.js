@@ -35,3 +35,17 @@ else if(localStorage.getItem("got") == "Тирелл") {
 
 }
 
+
+
+
+let radio = new Audio();
+radio.src = "../page1/assets/audio.mp3";
+
+document.addEventListener("DOMContentLoaded", () => {
+    radio.play();
+})
+
+document.querySelector('#off').onclick = function() {
+
+    radio.pause()
+    };

@@ -2,19 +2,24 @@ import {openModalInfo,closeModalInfo} from './js/modalInfo.js';
 import {openModal, closeModal} from './js/modal.js'; 
 import {openNext, openPrev} from './js/modal_carousel.js'; 
 
-
 let radio = new Audio();
-    radio.src = "assets/audio.mp3";
+radio.src = "assets/audio.mp3";
 
 
 document.querySelector('#on').onclick = function() {
-    radio.play()
+radio.play()
 }
 
 document.querySelector('#off').onclick = function() {
-    
-    radio.pause()
+
+radio.pause()
 };
+
+
+
+
+
+
 
 
 
