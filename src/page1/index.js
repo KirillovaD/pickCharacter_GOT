@@ -27,6 +27,7 @@ radio.pause()
 
 
 
+
 //Функция берет результат из формы и определяет персонажа
 let calc = document.getElementById("calc");
 
