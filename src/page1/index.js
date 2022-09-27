@@ -159,28 +159,3 @@ console.log(id);
 ) ;
 
 
-
-const inputs = document.querySelectorAll("input");
-const modalNode = document.querySelectorAll(".modalQuestions");
-
-let i
-for (i = 0; i < inputs.length; i++ ){
-    console.log(inputs[i])
-    inputs[i].addEventListener("click", onCheckNext);
-} 
-let current = 0;
-function onCheckNext(){
-    if (current +1 == modalNode.length && inputs[i].checked == true){
-        calc.classList.add(":hover");
-      } else {
-        current ++;
-    }
-    for (let i = 0; i < modalNode.length; i++){
-        modalNode[i].classList.remove("modalQuestions_active");
-    }
-    modalNode[current].classList.add("modalQuestions_active");
-
-}
-
-
-
