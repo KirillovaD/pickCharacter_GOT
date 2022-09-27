@@ -11,6 +11,7 @@ prevBtn.addEventListener("click", openPrev);
 let i //*
 for (i = 0; i < inputs.length; i++ ){
     inputs[i].addEventListener("click", openNext);
+
 } 
 
 let current = 0;
