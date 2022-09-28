@@ -1,30 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfa+Display+SC&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 body{
-    background-image: url(./assets/background2page.png);
-    height: 100vh;
+    
+    background-color:rgb(87, 27, 27);
+    
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 0;
+    font-family: 'Playfair Display', serif;
   
   }
-  h1, h2, p {
-    font-family: 'Playfair Display SC', serif;
-    color: white;
+  .main{
+    background-image: url(./assets/background2page.png);
+    /* opacity: 0.6; */
   }
-  h1 {
-    margin-top: 15%;
+
+  .container {
+    
+    position: absolute;
+    z-index: 1;
+    background-color: #f8f8f8;
+    box-shadow: 0px 4px 4px #f8f8f8(0, 0, 0, 0.25);
+    width: 60%;
+    height: auto;
+    padding: 2% 5% 6% 5%;
+    margin: 5% 10%;
+    
+    color: rgb(22, 22, 22);
+    transition: all 0.8s ease 0s;
+    transform: translate(0px, 0px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+   
+
   }
+  
 
 .result {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
   
-   padding: 5% ;
+    padding: 5% ;
    
 }
 
 #about {
-    font-family: 'Playfair Display SC', serif;
+  
     line-height: 1em;
     font-size: 1.25em;
     text-align: center;
@@ -33,18 +60,17 @@ body{
 }
 
 #avatar {
-    position: absolute;
-    top: 10%;
-    left: 5%;
+    align-self: center;
     width: calc(20vw - 60px);
     
 }
-
-img.lordImg {
+.div_Lord{
+  display: flex;
+  flex-direction: column;
+}
+.lordImg {
     width: 400px;
-    position: absolute;
-    right: 5%;
-    top: 50%;
+    margin: 0 auto;
+    
 }
     
-
