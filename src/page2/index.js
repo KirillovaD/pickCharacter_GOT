@@ -1,3 +1,6 @@
+// import translateText from "./js/translate.js";
+
+
 console.log(localStorage.getItem("got"));
 const node = document.querySelector(".result")
 
@@ -9,10 +12,11 @@ if(localStorage.getItem("got") == "Таргариан") {
         try {
             let response = await fetch("https://www.anapioficeandfire.com/api/houses?name=House Targaryen of King's Landing");
             let data = await response.json();
-            console.log(data);
     
             let name = document.createElement('h2');
-            name.textContent = data[0].name;
+            name = data[0].name;
+            translateText(name);
+            name.textContent = textRu;
             node.append(name);
     
             let date = document.createElement('p');
@@ -193,11 +197,11 @@ else if(localStorage.getItem("got") == "Ланистер") {
             let response = await fetch("https://www.anapioficeandfire.com/api/houses?name=House Lannister of Casterly Rock");
             let data = await response.json();
             console.log(data);
-    
+            
             let name = document.createElement('h2');
             name.textContent = data[0].name;
             node.append(name);
-    
+
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
