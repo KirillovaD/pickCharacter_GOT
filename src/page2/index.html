@@ -11,18 +11,41 @@
 </head>
 
 <body>
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en'
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+
+
+
+
   <main class="main">
+
     <div class="container">
-      <img src="" id="avatar">
+      <button style="width: 45px;border: none;"><img class="img__radio_off" id="off" src="../page1/assets/mute.png"
+          alt="" width="33" />
+      </button>
       <h1 id="about"></h1>
+      <img src="" id="avatar">
       <div class="result">
+        <div class="houseName"></div>
+        <div class="data">
+          <div class="firstCol "></div>
+          <div class="secondCol"></div>
+        </div>
       </div>
 
     </div>
 
   </main>
-
-
   <script type="module" src="index.js"></script>
 </body>
 

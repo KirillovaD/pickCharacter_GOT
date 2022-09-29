@@ -1,8 +1,11 @@
-// import translateText from "./js/translate.js";
-
-
 console.log(localStorage.getItem("got"));
-const node = document.querySelector(".result")
+const result = document.querySelector(".result")
+const houseName = document.querySelector(".houseName")
+const data = document.querySelector(".data")
+const firstCol = document.querySelector(".firstCol")
+const secondCol = document.querySelector(".secondCol")
+
+
 
 if(localStorage.getItem("got") == "Таргариан") {
     document.getElementById("avatar").src = "assets/targaryen.webp";
@@ -14,25 +17,25 @@ if(localStorage.getItem("got") == "Таргариан") {
             let data = await response.json();
     
             let name = document.createElement('h2');
-            name = data[0].name;
-            translateText(name);
-            name.textContent = textRu;
-            node.append(name);
+            name.textContent = data[0].name;
+            // translateText(name);
+            // name.textContent = textRu;
+            houseName.append(name);
     
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
-            node.append(date);
+            firstCol.append(date);
     
             let region = document.createElement('p');
             region.classList.add("region");
             region.innerHTML = `<h3>Регион: </h3>` + data[0].region;
-            node.append(region);
+            firstCol.append(region);
     
             let titles = document.createElement('p');
             titles.classList.add("titles");
             titles.innerHTML = `<h3>Титулы:  </h3>` + data[0].titles;
-            node.append(titles);
+            firstCol.append(titles);
     
             if (data[0].currentLord) {
                 let currentLordUrl = data[0].currentLord;
@@ -42,61 +45,38 @@ if(localStorage.getItem("got") == "Таргариан") {
                         let data = await response.json();
                         console.log(data.name)
                         
-                        let parentNode = document.createElement('div');
-                        parentNode.classList.add("div_Lord");
-                        
-        
-        
                         let currentLord = document.createElement('p');
                         currentLord.classList.add("currentLord");
                         currentLord.innerHTML = `<h3>Текущий лорд: </h3>` + data.name;
-                        parentNode.append(currentLord);
+                        secondCol.append(currentLord);
                         
                         let lordImg = document.createElement('img');
                         lordImg.classList.add("lordImg");
-        
-                        if (data.name == "Daenerys Targaryen"){
-                            lordImg.src = "assets/Daenerys_Targaryen.jpeg";
-                        } else if (data.name == "Cersei Lannister"){
-                            lordImg.src = "assets/Cersei_Lannister.jpeg";
-                        } else if (data.name == "Tommen Baratheon"){
-                            lordImg.src = "assets/Tommen Baratheon.jpeg"
-                        } else if (data.name == "Edmure Tully"){
-                            lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
-                        } else if (data.name == "Euron Greyjoy"){
-                            lordImg.src = "assets/Euron_Greyjoy.jpeg";
-                        } else if (data.name == "Mace Tyrell"){
-                            lordImg.src = "src/page2/assets/Mace_Tyrell.webp";
-                        }
-             
-                        parentNode.append(lordImg);
-                        node.append(parentNode);
-        
+                        lordImg.src = "assets/Daenerys_Targaryen.jpeg";
+
+                        secondCol.append(lordImg);
                     }
                     catch(err){
                         console.log(err);
                     }
                 }
                 loadLoard()
-
             }
-            
             
             let words = document.createElement('p');
                 words.classList.add("words");
                 words.innerHTML = `<h3>Девиз:  </h3>` + data[0].words;
-                node.append(words);
-    
+                firstCol.append(words);
         }
         catch(err){
             console.log(err);
         }
     }
-    
     loadData()
+}
 
-    
-} 
+
+
 else if(localStorage.getItem("got") == "Старк") {
     document.getElementById("avatar").src = "assets/stark.svg";
     document.getElementById("about").textContent = "Ты из Старков. Благородный, храбрый, но люди считают тебя второстепенным персонажем. Мы все равно болеем за тебя!";
@@ -109,22 +89,22 @@ else if(localStorage.getItem("got") == "Старк") {
     
             let name = document.createElement('h2');
             name.textContent = data[0].name;
-            node.append(name);
+            houseName.append(name);
     
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
-            node.append(date);
+            firstCol.append(date);
     
             let region = document.createElement('p');
             region.classList.add("region");
             region.innerHTML = `<h3>Регион: </h3>` + data[0].founded;
-            node.append(region);
+            firstCol.append(region);
     
             let titles = document.createElement('p');
             titles.classList.add("titles");
             titles.innerHTML = `<h3>Титулы:  </h3>` + data[0].titles;
-            node.append(titles);
+            firstCol.append(titles);
             
             if (data[0].currentLord) {
                 let currentLordUrl = data[0].currentLord;
@@ -137,57 +117,37 @@ else if(localStorage.getItem("got") == "Старк") {
                         let parentNode = document.createElement('div');
                         parentNode.classList.add("div_Lord");
                         
-        
-        
                         let currentLord = document.createElement('p');
                         currentLord.classList.add("currentLord");
                         currentLord.innerHTML = `<h3>Текущий лорд: </h3>` + data.name;
-                        parentNode.append(currentLord);
+                        secondCol.append(currentLord);
                         
                         let lordImg = document.createElement('img');
                         lordImg.classList.add("lordImg");
-        
-                        if (data.name == "Daenerys Targaryen"){
-                            lordImg.src = "assets/Daenerys_Targaryen.jpeg";
-                        } else if (data.name == "Cersei Lannister"){
-                            lordImg.src = "assets/Cersei_Lannister.jpeg";
-                        } else if (data.name == "Tommen Baratheon"){
-                            lordImg.src = "assets/Tommen Baratheon.jpeg"
-                        } else if (data.name == "Edmure Tully"){
-                            lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
-                        } else if (data.name == "Euron Greyjoy"){
-                            lordImg.src = "assets/Euron_Greyjoy.jpeg";
-                        } else if (data.name == "Mace Tyrell"){
-                            lordImg.src = "src/page2/assets/Mace_Tyrell.webp";
-                        }
-            
-                        parentNode.append(lordImg);
-                        node.append(parentNode);
-        
+                        lordImg.src = "assets/stark2.jpg";
+                        
+                        secondCol.append(lordImg);
                     }
                     catch(err){
                         console.log(err);
                     }
                 }
                 loadLoard()
-
             }
-            
-            
             let words = document.createElement('p');
                 words.classList.add("words");
                 words.innerHTML = `<h3>Девиз:  </h3>` + data[0].words;
-                node.append(words);
-    
+                firstCol.append(words);
         }
         catch(err){
             console.log(err);
         }
     }
-    
     loadData()
-
 }
+
+
+
 else if(localStorage.getItem("got") == "Ланистер") {
     document.getElementById("avatar").src = "assets/lannister.webp";
     document.getElementById("about").textContent = "Ты из Ланнистеров. Твоя мать была хомяком, а твой отец пах бузиной."
@@ -200,22 +160,22 @@ else if(localStorage.getItem("got") == "Ланистер") {
             
             let name = document.createElement('h2');
             name.textContent = data[0].name;
-            node.append(name);
+            houseName.append(name);
 
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
-            node.append(date);
+            firstCol.append(date);
     
             let region = document.createElement('p');
             region.classList.add("region");
             region.innerHTML = `<h3>Регион: </h3>` + data[0].region;
-            node.append(region);
+            firstCol.append(region);
     
             let titles = document.createElement('p');
             titles.classList.add("titles");
             titles.innerHTML = `<h3>Титулы:  </h3>` + data[0].titles;
-            node.append(titles);
+            firstCol.append(titles);
     
             if (data[0].currentLord) {
                 let currentLordUrl = data[0].currentLord;
@@ -228,57 +188,37 @@ else if(localStorage.getItem("got") == "Ланистер") {
                         let parentNode = document.createElement('div');
                         parentNode.classList.add("div_Lord");
                         
-        
-        
                         let currentLord = document.createElement('p');
                         currentLord.classList.add("currentLord");
                         currentLord.innerHTML = `<h3>Текущий лорд: </h3>` + data.name;
-                        parentNode.append(currentLord);
+                        secondCol.append(currentLord);
                         
                         let lordImg = document.createElement('img');
                         lordImg.classList.add("lordImg");
-        
-                        if (data.name == "Daenerys Targaryen"){
-                            lordImg.src = "assets/Daenerys_Targaryen.jpeg";
-                        } else if (data.name == "Cersei Lannister"){
-                            lordImg.src = "assets/Cersei_Lannister.jpeg";
-                        } else if (data.name == "Tommen Baratheon"){
-                            lordImg.src = "assets/Tommen Baratheon.jpeg"
-                        } else if (data.name == "Edmure Tully"){
-                            lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
-                        } else if (data.name == "Euron Greyjoy"){
-                            lordImg.src = "assets/Euron_Greyjoy.jpeg";
-                        } else if (data.name == "Mace Tyrell"){
-                            lordImg.src = "src/page2/assets/Mace_Tyrell.webp";
-                        }
-                        parentNode.append(lordImg);
-                        node.append(parentNode);
-        
+                        lordImg.src = "assets/Cersei_Lannister.jpeg";
+
+                        secondCol.append(lordImg);
                     }
                     catch(err){
                         console.log(err);
                     }
                 }
                 loadLoard()
-    
             }
-            
-            
             let words = document.createElement('p');
                 words.classList.add("words");
                 words.innerHTML = `<h3>Девиз:  </h3>` + data[0].words;
-                node.append(words);
-    
+                firstCol.append(words);
         }
         catch(err){
             console.log(err);
         }
-    }
-    
+    }    
     loadData()
-
-
 }
+
+
+
 else if(localStorage.getItem("got") == "Баратеон") {
     document.getElementById("avatar").src = "assets/baratheon.webp";
     document.getElementById("about").textContent = "Ты из дома Баратеонов. Вероятнее всего тебя уже нет в живым, прости.";
@@ -291,22 +231,22 @@ else if(localStorage.getItem("got") == "Баратеон") {
     
             let name = document.createElement('h2');
             name.textContent = data[0].name;
-            node.append(name);
+            houseName.append(name);
     
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
-            node.append(date);
+            firstCol.append(date);
     
             let region = document.createElement('p');
             region.classList.add("region");
             region.innerHTML = `<h3>Регион: </h3>` + data[0].region;
-            node.append(region);
+            firstCol.append(region);
     
             let titles = document.createElement('p');
             titles.classList.add("titles");
             titles.innerHTML = `<h3>Титулы:  </h3>` + data[0].titles;
-            node.append(titles);
+            firstCol.append(titles);
     
             if (data[0].currentLord) {
                 let currentLordUrl = data[0].currentLord;
@@ -319,57 +259,37 @@ else if(localStorage.getItem("got") == "Баратеон") {
                         let parentNode = document.createElement('div');
                         parentNode.classList.add("div_Lord");
                         
-        
-        
                         let currentLord = document.createElement('p');
                         currentLord.classList.add("currentLord");
                         currentLord.innerHTML = `<h3>Текущий лорд: </h3>` + data.name;
-                        parentNode.append(currentLord);
+                        secondCol.append(currentLord);
                         
                         let lordImg = document.createElement('img');
                         lordImg.classList.add("lordImg");
-        
-                        if (data.name == "Daenerys Targaryen"){
-                            lordImg.src = "assets/Daenerys_Targaryen.jpeg";
-                        } else if (data.name == "Cersei Lannister"){
-                            lordImg.src = "assets/Cersei_Lannister.jpeg";
-                        } else if (data.name == "Tommen Baratheon"){
-                            lordImg.src = "assets/Tommen Baratheon.jpeg"
-                        } else if (data.name == "Edmure Tully"){
-                            lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
-                        } else if (data.name == "Euron Greyjoy"){
-                            lordImg.src = "assets/Euron_Greyjoy.jpeg";
-                        } else if (data.name == "Mace Tyrell"){
-                            lordImg.src = "src/page2/assets/Mace_Tyrell.webp";
-                        }
-            
-                        parentNode.append(lordImg);
-                        node.append(parentNode);
-        
+                        lordImg.src = "assets/Tommen Baratheon.jpeg"
+
+                        secondCol.append(lordImg);
                     }
                     catch(err){
                         console.log(err);
                     }
                 }
                 loadLoard()
-    
             }
-            
-            
             let words = document.createElement('p');
                 words.classList.add("words");
                 words.innerHTML = `<h3>Девиз:  </h3>` + data[0].words;
-                node.append(words);
-    
+                firstCol.append(words);
         }
         catch(err){
             console.log(err);
         }
     }
-    
     loadData()
-
 }
+
+
+
 else if(localStorage.getItem("got") == "Тулли") {
     document.getElementById("avatar").src = "assets/tully.webp";
     document.getElementById("about").textContent = "Ты из рода Тулли. Никто уже и не помнит о тебе.";
@@ -382,22 +302,22 @@ else if(localStorage.getItem("got") == "Тулли") {
     
             let name = document.createElement('h2');
             name.textContent = data[0].name;
-            node.append(name);
+            houseName.append(name);
     
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
-            node.append(date);
+            firstCol.append(date);
     
             let region = document.createElement('p');
             region.classList.add("region");
             region.innerHTML = `<h3>Регион: </h3>` + data[0].region;
-            node.append(region);
+            firstCol.append(region);
     
             let titles = document.createElement('p');
             titles.classList.add("titles");
             titles.innerHTML = `<h3>Титулы:  </h3>` + data[0].titles;
-            node.append(titles);
+            firstCol.append(titles);
     
             if (data[0].currentLord) {
                 let currentLordUrl = data[0].currentLord;
@@ -410,57 +330,37 @@ else if(localStorage.getItem("got") == "Тулли") {
                         let parentNode = document.createElement('div');
                         parentNode.classList.add("div_Lord");
                         
-        
-        
                         let currentLord = document.createElement('p');
                         currentLord.classList.add("currentLord");
                         currentLord.innerHTML = `<h3>Текущий лорд: </h3>` + data.name;
-                        parentNode.append(currentLord);
+                        secondCol.append(currentLord);
                         
                         let lordImg = document.createElement('img');
                         lordImg.classList.add("lordImg");
-        
-                        if (data.name == "Daenerys Targaryen"){
-                            lordImg.src = "assets/Daenerys_Targaryen.jpeg";
-                        } else if (data.name == "Cersei Lannister"){
-                            lordImg.src = "assets/Cersei_Lannister.jpeg";
-                        } else if (data.name == "Tommen Baratheon"){
-                            lordImg.src = "assets/Tommen Baratheon.jpeg"
-                        } else if (data.name == "Edmure Tully"){
-                            lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
-                        } else if (data.name == "Euron Greyjoy"){
-                            lordImg.src = "assets/Euron_Greyjoy.jpeg";
-                        } else if (data.name == "Mace Tyrell"){
-                            lordImg.src = "src/page2/assets/Mace_Tyrell.webp";
-                        }
-            
-                        parentNode.append(lordImg);
-                        node.append(parentNode);
-        
+                        lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
+
+                        secondCol.append(lordImg);
                     }
                     catch(err){
                         console.log(err);
                     }
                 }
                 loadLoard()
-    
             }
-            
-            
             let words = document.createElement('p');
                 words.classList.add("words");
                 words.innerHTML = `<h3>Девиз:  </h3>` + data[0].words;
-                node.append(words);
-    
+                firstCol.append(words);
         }
         catch(err){
             console.log(err);
         }
     }
-    
     loadData()
-
 }
+
+
+
 else if(localStorage.getItem("got") == "Грей Джой") {
     document.getElementById("avatar").src = "assets/greyjoy.webp";
     document.getElementById("about").textContent = "Вы Грей Джой. Безжалостный пират и большой неудачник.";
@@ -472,22 +372,22 @@ else if(localStorage.getItem("got") == "Грей Джой") {
     
             let name = document.createElement('h2');
             name.textContent = data[0].name;
-            node.append(name);
+            houseName.append(name);
     
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
-            node.append(date);
+            firstCol.append(date);
     
             let region = document.createElement('p');
             region.classList.add("region");
             region.innerHTML = `<h3>Регион: </h3>` + data[0].region;
-            node.append(region);
+            firstCol.append(region);
     
             let titles = document.createElement('p');
             titles.classList.add("titles");
             titles.innerHTML = `<h3>Титулы:  </h3>` + data[0].titles;
-            node.append(titles);
+            firstCol.append(titles);
     
             if (data[0].currentLord) {
                 let currentLordUrl = data[0].currentLord;
@@ -500,58 +400,37 @@ else if(localStorage.getItem("got") == "Грей Джой") {
                         let parentNode = document.createElement('div');
                         parentNode.classList.add("div_Lord");
                         
-        
-        
                         let currentLord = document.createElement('p');
                         currentLord.classList.add("currentLord");
                         currentLord.innerHTML = `<h3>Текущий лорд: </h3>` + data.name;
-                        parentNode.append(currentLord);
+                        secondCol.append(currentLord);
                         
                         let lordImg = document.createElement('img');
                         lordImg.classList.add("lordImg");
-        
-                        if (data.name == "Daenerys Targaryen"){
-                            lordImg.src = "assets/Daenerys_Targaryen.jpeg";
-                        } else if (data.name == "Cersei Lannister"){
-                            lordImg.src = "assets/Cersei_Lannister.jpeg";
-                        } else if (data.name == "Tommen Baratheon"){
-                            lordImg.src = "assets/Tommen Baratheon.jpeg"
-                        } else if (data.name == "Edmure Tully"){
-                            lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
-                        } else if (data.name == "Euron Greyjoy"){
-                            lordImg.src = "assets/Euron_Greyjoy.jpeg";
-                        } else if (data.name == "Mace Tyrell"){
-                            lordImg.src = "src/page2/assets/Mace_Tyrell.webp";
-                        }
+                        lordImg.src = "assets/Euron_Greyjoy.jpeg";
             
-                        parentNode.append(lordImg);
-                        node.append(parentNode);
-        
+                        secondCol.append(lordImg);
                     }
                     catch(err){
                         console.log(err);
                     }
                 }
                 loadLoard()
-    
             }
-            
-            
             let words = document.createElement('p');
                 words.classList.add("words");
                 words.innerHTML = `<h3>Девиз:  </h3>` + data[0].words;
-                node.append(words);
-    
+                firstCol.append(words);
         }
         catch(err){
             console.log(err);
         }
     }
-    
     loadData()
-
-
 }
+
+
+
 else if(localStorage.getItem("got") == "Тирелл") {
     document.getElementById("avatar").src = "assets/tyrell.webp";
     document.getElementById("about").textContent = "Ты из дома Тиреллов. Ты богат, но одинок.";
@@ -564,22 +443,22 @@ else if(localStorage.getItem("got") == "Тирелл") {
     
             let name = document.createElement('h2');
             name.textContent = data[0].name;
-            node.append(name);
+            houseName.append(name);
     
             let date = document.createElement('p');
             date.classList.add("date");
             date.innerHTML= `<h3>Основан в: </h3>` + data[0].founded;
-            node.append(date);
+            firstCol.append(date);
     
             let region = document.createElement('p');
             region.classList.add("region");
             region.innerHTML = `<h3>Регион: </h3>` + data[0].region;
-            node.append(region);
+            firstCol.append(region);
     
             let titles = document.createElement('p');
             titles.classList.add("titles");
             titles.innerHTML = `<h3>Титулы:  </h3>` + data[0].titles;
-            node.append(titles);
+            firstCol.append(titles);
     
             if (data[0].currentLord) {
                 let currentLordUrl = data[0].currentLord;
@@ -591,69 +470,46 @@ else if(localStorage.getItem("got") == "Тирелл") {
                         
                         let parentNode = document.createElement('div');
                         parentNode.classList.add("div_Lord");
-                        
-        
-        
+
                         let currentLord = document.createElement('p');
                         currentLord.classList.add("currentLord");
                         currentLord.innerHTML = `<h3>Текущий лорд: </h3>` + data.name;
-                        parentNode.append(currentLord);
+                        secondCol.append(currentLord);
                         
                         let lordImg = document.createElement('img');
                         lordImg.classList.add("lordImg");
-        
-                        if (data.name == "Daenerys Targaryen"){
-                            lordImg.src = "assets/Daenerys_Targaryen.jpeg";
-                        } else if (data.name == "Cersei Lannister"){
-                            lordImg.src = "assets/Cersei_Lannister.jpeg";
-                        } else if (data.name == "Tommen Baratheon"){
-                            lordImg.src = "assets/Tommen Baratheon.jpeg"
-                        } else if (data.name == "Edmure Tully"){
-                            lordImg.src = "src/page2/assets/Edmure_Tully.jpeg";
-                        } else if (data.name == "Euron Greyjoy"){
-                            lordImg.src = "assets/Euron_Greyjoy.jpeg";
-                        } else if (data.name == "Mace Tyrell"){
-                            lordImg.src = "src/page2/assets/Mace_Tyrell.webp";
-                        }
+                        lordImg.src = "assets/Mace_Tyrell.webp";
             
-                        parentNode.append(lordImg);
-                        node.append(parentNode);
-        
+                        secondCol.append(lordImg);
                     }
                     catch(err){
                         console.log(err);
                     }
                 }
                 loadLoard()
-    
             }
-            
-            
             let words = document.createElement('p');
                 words.classList.add("words");
                 words.innerHTML = `<h3>Девиз:  </h3>` + data[0].words;
-                node.append(words);
-    
+                firstCol.append(words);
         }
         catch(err){
             console.log(err);
         }
     }
-    
     loadData()
 }
 
 
 
+let radio = new Audio();
+radio.src = "../page1/assets/audio.mp3";
 
-// let radio = new Audio();
-// radio.src = "../page1/assets/audio.mp3";
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     radio.play();
-// })
-
-// document.querySelector('#off').onclick = function() {
-
-//     radio.pause()
-//     };
+document.addEventListener("DOMContentLoaded", () => {
+    radio.play()
+    });
+    
+    document.querySelector('#off').onclick = function() {
+    
+    radio.pause()
+    };

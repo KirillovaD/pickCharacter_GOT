@@ -19,12 +19,14 @@ body{
     
     position: absolute;
     z-index: 1;
-    background-color: #f8f8f8;
+    background-color: #d9d5d5;
     box-shadow: 0px 4px 4px #f8f8f8(0, 0, 0, 0.25);
-    width: 60%;
+    width: 60vw;
     height: auto;
-    padding: 2% 5% 6% 5%;
-    margin: 5% 10%;
+    padding: 0 3% 6% 3%;
+    margin: 2% 16vw;
+    border: none;
+    border-radius: 2em;
     
     color: rgb(22, 22, 22);
     transition: all 0.8s ease 0s;
@@ -45,24 +47,28 @@ body{
     flex-direction: column;
     justify-content: center;
     align-content: center;
-  
     padding: 5% ;
-   
+    background-color: white;
+    border-radius: 1em;
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
 }
 
 #about {
-  
-    line-height: 1em;
-    font-size: 1.25em;
+    line-height: 1.5em;
     text-align: center;
     padding: 0;
-    padding: 10px 30px 30px 30px;
-}
+    padding: 0 30px 0 30px;
+    font-family: 'Roboto', sans-serif;
+  }
 
 #avatar {
     align-self: center;
     width: calc(20vw - 60px);
-    
+    margin-bottom: 20px;
 }
 .div_Lord{
   display: flex;
