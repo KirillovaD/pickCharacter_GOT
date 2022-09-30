@@ -7,7 +7,9 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Playfa+Display+SC&display=swap');
 
-
+body {
+  background-color: black;
+}
 
 main{
   background-image: url(assets/Group\ 4.png);
